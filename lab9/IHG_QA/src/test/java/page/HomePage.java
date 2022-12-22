@@ -23,6 +23,12 @@ public class HomePage {
         return this;
     }
 
+    public void openBrandsPage() {
+        WebElement brandsButton = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='brandNav-link u-link site-int-link' and text()='Our Brands']")));
+        brandsButton.click();
+    }
+
     public void changeLocalizationToRu() {
         WebElement localizationMenuButton = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='language-text nav-middle']")));
