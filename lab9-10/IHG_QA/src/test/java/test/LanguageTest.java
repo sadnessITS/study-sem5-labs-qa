@@ -34,18 +34,6 @@ public class LanguageTest {
         Assert.assertEquals(localizationMenuButton.getText(), "РУССКИЙ");
     }
 
-    @Test(description = "TC_FC_1")
-    public void TC_FC_1(){
-        HomePage homePage = new HomePage(driver);
-        homePage
-                .openHomePage()
-                .changeLocalizationToRu();
-
-        WebElement localizationMenuButton = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='language-text nav-middle']")));
-        Assert.assertEquals(localizationMenuButton.getText(), "РУССКИЙ");
-    }
-
     @AfterMethod(alwaysRun = true)
     public void browserShoutDown(){
         driver.quit();
